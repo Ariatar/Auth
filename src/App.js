@@ -1,45 +1,47 @@
 import React, { useState } from "react";
-import LoginForm from "./components/loginForm";
-import "./App.scss";
+import Odds from "../src/components/Odds";
+import "../src/App.scss";
+import LoginForm from "./components/LoginForm";
 
 function App() {
    const adminUser = {
-      password: "0662195934",
-      email: "oleksiicherkashchenko@gmail.com",
+      email: "oleksy@gmail.com",
+      password: "1111",
    };
-
-   const [user, setUser] = useState({ name: "", email: "" });
+   const [user, setUser] = useState({ email: "", name: "" });
    const [error, setError] = useState("");
+
    const Login = (details) => {
       console.log(details);
-
       if (
-         details.password == adminUser.password &&
-         details.email == adminUser.email
+         details.email === adminUser.email ||
+         details.password === adminUser.password
       ) {
-         console.log("Logged");
+         setUser({
+            name: details.name,
+            email: details.email,
+         });
+         console.log("logged in");
       } else {
-         console.log("do not Match");
+         console.log("details do not match");
       }
    };
 
-   const Logout = () => {
-      console.log("Logout");
+   const logout = () => {
+      console.log(logout);
    };
    return (
-      <div>
-         {user.email != "" ? (
-            <div className="welcome">
-               <h2>
-                  Welcome <span>{user.name}</span>
-               </h2>
-               <button>Logout</button>
-            </div>
-         ) : (
-            <div>
+      <div className="App">
+         <div>
+            {user.email !== "" ? (
+               <div className="Welcome">
+                  Welcome <h1>{user.name}</h1>
+                  <Odds />
+               </div>
+            ) : (
                <LoginForm Login={Login} error={error} />
-            </div>
-         )}
+            )}
+         </div>
       </div>
    );
 }

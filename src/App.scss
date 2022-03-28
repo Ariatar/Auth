@@ -1,54 +1,129 @@
 div {
    text-align: center;
 }
-
-.navbar {
-   height: 50px;
-   background-color: rgba(102, 16, 83, 0.698);
-   color: white;
+body {
+   background-color: #878787;
+}
+.header__content {
    display: flex;
-   align-items: center;
    justify-content: space-around;
 }
-
-.logo {
-   font-size: 20px;
-   font-weight: bold;
+.app {
+   text-align: center;
+   font-family: "Roboto", sans-serif;
+   max-width: 940px;
+   margin: 0 auto;
 }
 
-.list {
+header {
+   padding: 1.2em 0;
+   background-color: #2b2424;
+}
+
+header button {
+   margin-right: 15px;
+   border: none;
+   border-radius: 2px;
+   display: inline-block;
+   height: 36px;
+   line-height: 36px;
+   padding: 0 2rem;
+   text-transform: uppercase;
+   vertical-align: middle;
+   -webkit-tap-highlight-color: transparent;
+   color: #fff;
+   background-color: #26a69a;
+   text-align: center;
+   letter-spacing: 0.5px;
+   overflow: hidden;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+   -webkit-tap-highlight-color: transparent;
+   vertical-align: middle;
+   -webkit-transition: 0.2s ease-out;
+   transition: 0.2s ease-out;
+}
+
+header button:hover,
+header button:active {
+   background-color: #2bbbad;
+   -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
+      0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12),
+      0 3px 1px -1px rgba(0, 0, 0, 0.2);
+   outline: 0;
+}
+
+.container {
+   display: flex;
+}
+
+.league-info {
+   margin-bottom: 1.2em;
+   align-self: center;
+}
+
+.league-info h1 {
+   font-size: 1.8em;
+   font-weight: 400;
+   margin: 0 0 0.5em;
+}
+.league-info span {
+   margin-bottom: 10px;
+   display: block;
+}
+
+.standings {
+   margin: 0 auto;
+   border-collapse: collapse;
+}
+
+.standings .table-head,
+.standings .team-position {
+   color: #878787;
+}
+
+.standings .team-position {
+   text-align: left;
+}
+
+.standings tr {
+   border-bottom: 1px solid #dedede;
+   line-height: 2.3em;
+}
+
+.standings tr:last-child {
+   border: none;
+}
+
+.standings td {
+   width: 35px;
+}
+
+.standings .team-name {
+   width: 250px;
+   text-align: left;
    display: flex;
    align-items: center;
-   list-style: none;
 }
 
-.listItem {
-   margin-right: 20px;
-   font-weight: 500;
-   cursor: pointer;
-}
-
-.avatar {
-   width: 32px;
-   height: 32px;
-   border-radius: 50%;
-   object-fit: cover;
-}
-
-.home {
+.crest {
+   width: 30px;
+   height: 30px;
+   margin-right: 10px;
    display: flex;
-   padding: 50px 100px;
-   justify-content: space-between;
-   flex-wrap: wrap;
+   justify-content: center;
 }
 
-.card {
-   width: 30%;
-   padding: 10px;
-   border-radius: 20px;
-   -webkit-box-shadow: 0px 5px 33px -21px rgba(66, 68, 90, 1);
-   -moz-box-shadow: 0px 5px 33px -21px rgba(66, 68, 90, 1);
-   box-shadow: 0px 5px 33px -21px rgba(66, 68, 90, 1);
+.crest img {
+   max-width: 100%;
+   max-height: 100%;
+}
+
+.standings .team-points {
+   font-weight: bold;
 }
 
 .img {
@@ -56,50 +131,6 @@ div {
    height: 200px;
    object-fit: cover;
    margin: 20px 0px;
-}
-
-.desc {
-   color: #333;
-   margin-bottom: 20px;
-   line-height: 25px;
-}
-
-.cardButton {
-   border: none;
-   border-radius: 10px;
-   background-color: rgba(53, 16, 102, 0.678);
-   padding: 10px;
-   color: white;
-   font-weight: bold;
-   cursor: pointer;
-}
-
-.post {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-}
-
-.postImg {
-   width: 100%;
-   height: 300px;
-   object-fit: cover;
-   margin-bottom: 20px;
-}
-
-.postDesc {
-   padding: 0 100px;
-   font-size: 24px;
-   font-weight: 300;
-   color: gray;
-   margin-top: 50px;
-}
-
-.postLongDesc {
-   padding: 100px;
-   padding-top: 50px;
-   font-size: 18px;
-   line-height: 24px;
 }
 
 .login {
@@ -215,11 +246,6 @@ input {
 }
 
 @media screen and (max-width: 992px) {
-   .card {
-      width: 100%;
-      margin-bottom: 50px;
-   }
-
    .wrapper {
       width: 65%;
       height: 90%;

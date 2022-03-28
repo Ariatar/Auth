@@ -6,15 +6,18 @@ const LoginForm = ({ Login, error }) => {
       email: "",
       password: "",
    });
+
    const submitHandler = (e) => {
       e.preventDefault();
 
       Login(details);
    };
+
    return (
       <div>
          {" "}
          <h1 className="loginTitle">Choose a Login Method</h1>
+         <div>{error !== "" ? <div className="error">{error}</div> : ""}</div>
          <form action="" onSubmit={submitHandler}>
             <div className="login">
                <div className="wrapper">
